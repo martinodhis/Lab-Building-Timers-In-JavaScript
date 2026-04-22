@@ -3,6 +3,10 @@ const { recurringTimer, stopRecurringTimer } = require('../src/recurringTimer')
 jest.useFakeTimers()
 
 describe('recurringTimer', () => {
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
+
   test('should log the message at the specified interval', () => {
     console.log = jest.fn() // Mock console.log
 
